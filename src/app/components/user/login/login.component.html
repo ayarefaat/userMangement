@@ -1,0 +1,33 @@
+
+<section class="mt-5">
+    <div class="container-fluid">
+        <div class="row justify-content-around">
+            <div id="form" class="col-md-4">
+                <div class="container">
+                    <h2>Login</h2>
+                    <form [formGroup]="form">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1"><h4>User name:</h4></label>
+                          <input formControlName="username" type="text" class="form-control" placeholder="Enter UserName">
+                          <div *ngIf="form.controls['username'].invalid && (form.controls['username'].touched || form.controls['username'].dirty)">
+                            <small  class="form-text text-danger" *ngIf="form.controls['username'].hasError('required')" >Required field</small>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1"><h4>Password:</h4></label>
+                            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <div *ngIf="form.controls['password'].invalid && (form.controls['password'].touched || form.controls['password'].dirty)">
+                              <small class="form-text text-danger" *ngIf="form.controls['password'].hasError('required')">required password</small>
+                            </div>
+                          </div>
+                        
+                        <button [disabled]="form.invalid" type="submit" class="btn " (click)="login()" >Login!</button>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
