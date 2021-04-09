@@ -10,13 +10,19 @@ div#form{
     box-shadow: 5px 5px 5px 5px #aaa;
     border-color: #aaa;
 }
-div#form h2{
+div#form h2.login{
     text-align: center;
     padding: 1rem 0;
     border-bottom: 1px solid #aaaa;
+    color: teal;
+    font-weight: bolder;
 }
 form{
     padding-top: 2rem;
+}
+
+label{
+    font-style: italic;
 }
 button{
     background-color: teal;

@@ -1,0 +1,28 @@
+<div class="container p-4">
+    <h2 class="p-5 text-center">Users List</h2>
+    <button class="add btn" > <span><i class="fas fa-plus-square"></i></span>Add User</button>
+  <div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ClientId</th>
+            <th scope="col">UserName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Category ID</th>
+            <th scope="col">Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let user of users[0]; let currentIndex=index;">
+          <tr>
+            <td>{{user.clientId}}</td>
+            <td>{{user.userName}}</td>
+            <td>{{user.email}}</td>
+            <td>Category: <span>{{user.categoryId}}</span></td>
+            <td>{{user.isActive}}</td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+  </div>
+  </div>

@@ -1,3 +1,4 @@
 export class ApiResponse{
-    token:string
+    token:string;
+    expires:any
 }
