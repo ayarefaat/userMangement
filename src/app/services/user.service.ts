@@ -13,4 +13,7 @@ export class UserService {
   addUsers(body:any){
     return this._apiService.postWithToken('JobEstimator/add-client',body)
   }
+  deleteUser(id:number){
+    return this._apiService.delete(`JobEstimator/remove-client/${id}`)
+  }
 }

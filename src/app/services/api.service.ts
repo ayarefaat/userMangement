@@ -18,4 +18,7 @@ export class ApiService {
   postWithToken(url:string,body:any){
     return this._httpClient.post(`${environment.apiURL}/${url}`,body,{headers:{"Authorization":"Bearer "+this._sharedService.getToken()}})
   }
+  delete(url:string){
+    return this._httpClient.delete(`${environment.apiURL}/${url}`,{headers:{"Authorization":"Bearer "+this._sharedService.getToken()}})
+  }
 }

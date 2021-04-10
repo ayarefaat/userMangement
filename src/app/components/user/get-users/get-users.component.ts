@@ -19,5 +19,10 @@ export class GetUsersComponent implements OnInit {
       
     })
   }
-
+deleteUser(id:number){
+  this._userService.deleteUser(id).subscribe(res=>{
+    console.log(res);
+    
+  })
+}
 }

@@ -31,9 +31,9 @@ form:FormGroup
       let token = (res as ApiResponse).token;
       let expires = (res as ApiResponse).expires;
       let exp=  new Date(expires).getTime();
-      // let now = new Date().getTime();
-      // let end = exp -now
-      console.log(+exp);
+      let now = new Date().getTime();
+      let end = exp -now
+      console.log(end);
       
       this._sharedService.login(token,+exp);
       this._router.navigateByUrl('getUsers')

@@ -11,6 +11,7 @@
             <th scope="col">Email</th>
             <th scope="col">UserName</th>
             <th scope="col">Recipients</th>
+            <th scope="col">Remove</th>
           </tr>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@
             <td>{{user.email}}</td>
             <td>{{user.userName}}</td>
             <td>{{user.recipients}}</td>
+            <td><button class="btn btn-danger" (click)="deleteUser(user.clientId)">Delete</button></td>
           </tr>
         </ng-container>
         </tbody>
