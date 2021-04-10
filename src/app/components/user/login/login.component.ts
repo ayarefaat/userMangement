@@ -23,19 +23,19 @@ form:FormGroup
     })
   }
   login(){
-    let admin=new Login();
-    admin=this.form.value
+    let user=new Login();
+    user=this.form.value
     console.log(this.form.value);
-    this._loginService.login(admin).subscribe(res=>{
+    this._loginService.login(user).subscribe(res=>{
       console.log(res);
       let token = (res as ApiResponse).token;
-      // let expires = (res as ApiResponse).expires;
-      // let exp=  new Date(expires).getTime();
+      let expires = (res as ApiResponse).expires;
+      let exp=  new Date(expires).getTime();
       // let now = new Date().getTime();
       // let end = exp -now
-      // console.log(end/1000);
+      console.log(+exp);
       
-      this._sharedService.login(token);
+      this._sharedService.login(token,+exp);
       this._router.navigateByUrl('getUsers')
     })
   }

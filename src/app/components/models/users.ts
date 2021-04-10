@@ -1,7 +1,8 @@
 export class Users{
-    clientId:number;
-    userName:string;
-    email:string;
-    categoryId:number;
-    isActive:boolean
+   firstName:string;
+   lastName:string;
+   email:string;
+   username:string;
+   categoryId:any;
+   note:any
 }

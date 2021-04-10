@@ -7,22 +7,23 @@ import { Subject } from 'rxjs';
 export class SharedService {
 logged=new Subject<boolean>();
   constructor() { }
-  login(token:string){
+  login(token:string,expires:any){
     localStorage.setItem("token",token);
-    // localStorage.setItem("expiresIn" ,expires )
-    this.setLoggedStatus(true)
+    localStorage.setItem("expiresIn" ,expires )
+    this.setLoggedStatus(true);
+    // this.autoLogout(expires)
   }
   logout(){
     localStorage.removeItem("token");
-    // localStorage.removeItem("expiresIn");
+    localStorage.removeItem("expiresIn");
     this.setLoggedStatus(false)
   }
   isLogged():boolean{
     let token=localStorage.getItem("token");
-    // let expiresIn=localStorage.getItem("expiresIn");
-    // let DateNow=new Date().getTime();
-    // let expiresDate=new Date(expiresIn).getTime();
-    // let expiryDate=expiresDate -DateNow
+    let expiresIn=localStorage.getItem("expiresIn");
+    let DateNow=new Date().getTime();
+    let expiresDate=new Date(expiresIn).getTime();
+    let expiryDate=expiresDate -DateNow
     if(token)
       return true
       return false;
@@ -36,4 +37,9 @@ logged=new Subject<boolean>();
   getToken(){
     return localStorage.getItem("token");
   }
+  // autoLogout(expirationDate:number){
+  //   setTimeout(()=>{
+  //     this.logout()
+  //   },expirationDate)
+  // }
 }

@@ -1,6 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="container-fluid">
-        <a href=""><img src="../assets/Logo.png" alt="" width="60%"></a>
-        <a *ngIf="isLogged" routerLink="/logout" >Logout</a>
+    <div class="container-fluid d-flex justify-content-between">
+        <a routerLink="/getUsers"><img src="../assets/Logo.png" alt="" width="50%"></a>
+        <ul>
+            <li> <a class="users" *ngIf="isLogged" routerLink="/getUsers" >Users List</a></li>
+            <li><a *ngIf="isLogged" routerLink="/logout" >Logout</a></li>
+        </ul>
     </div>
   </nav>
+ 
+  

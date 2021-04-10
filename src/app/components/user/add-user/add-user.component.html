@@ -1,0 +1,61 @@
+<section class="mt-5">
+    <div class="container-fluid">
+        <div class="row justify-content-around">
+            <div id="form" class="col-md-4">
+                <div class="container">
+                    <h2 class="add">Add User</h2>
+                    <form [formGroup]="form">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1"><h4>First name:</h4></label>
+                          <input formControlName="firstName" type="text" class="form-control" placeholder="Enter firstName">
+                          <div *ngIf="form.controls['firstName'].invalid && (form.controls['firstName'].touched || form.controls['firstName'].dirty)">
+                            <small  class="form-text text-danger" *ngIf="form.controls['firstName'].hasError('required')" >Required field</small>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1"><h4>Last name:</h4></label>
+                          <input formControlName="lastName" type="text" class="form-control" placeholder="Enter lastName">
+                          <div *ngIf="form.controls['lastName'].invalid && (form.controls['lastName'].touched || form.controls['lastName'].dirty)">
+                            <small  class="form-text text-danger" *ngIf="form.controls['lastName'].hasError('required')" >Required field</small>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1"><h4>Username:</h4></label>
+                          <input formControlName="username" type="text" class="form-control" placeholder="Enter username">
+                          <div *ngIf="form.controls['username'].invalid && (form.controls['username'].touched || form.controls['username'].dirty)">
+                            <small  class="form-text text-danger" *ngIf="form.controls['username'].hasError('required')" >Required field</small>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1"><h4>Email:</h4></label>
+                            <input formControlName="email" type="email" class="form-control" id="exampleInputemail1" placeholder="email">
+                            <div *ngIf="form.controls['email'].invalid && (form.controls['email'].touched || form.controls['email'].dirty)">
+                              <small class="form-text text-danger" *ngIf="form.controls['email'].hasError('required')">required field</small>
+                            </div>
+                          </div>
+                          <div class="form-group mb-4">
+                            <label for="categoryId">
+                                <h5>Category ID :</h5>
+                            </label>
+                            <select class="form-control" id="categoryId"
+                                formControlName="categoryId">
+                                <option value="1">Landscaper</option>
+                                <option value="2">Carpets</option>
+                                <option value="3">Blinds</option>
+                                <option value="4">Windows</option>
+                                <option value="5">Units</option>
+                            </select>
+                        </div>
+                       
+                        <button [disabled]="form.invalid" type="submit" class="btn" (click)="addUser()">Add User!</button>
+                        </form>
+                    </div>
+            </div>
+        </div>
+        <div><h2 class="success" *ngIf="isSuccessed">Succussfully added user</h2></div>
+        <a routerLink="/getUsers" class="btn list col-md-4 mb-5" >Users List</a>
+    </div>
+</section>
+
+
+

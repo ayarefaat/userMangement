@@ -13,6 +13,9 @@ export class ApiService {
     return this._httpClient.post(`${environment.apiURL}/${url}`,body,{headers:{"Content-Type":"application/json"}})
   }
   get(url:string){
-    return this._httpClient.get(`${environment.apiURL}/${url}`,{headers:{"Authorization":this._sharedService.getToken()}})
+    return this._httpClient.get(`${environment.apiURL}/${url}`,{headers:{"Authorization":"Bearer "+this._sharedService.getToken()}})
+  }
+  postWithToken(url:string,body:any){
+    return this._httpClient.post(`${environment.apiURL}/${url}`,body,{headers:{"Authorization":"Bearer "+this._sharedService.getToken()}})
   }
 }

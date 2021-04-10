@@ -10,4 +10,7 @@ export class UserService {
   getUsers(){
     return this._apiService.get('JobEstimator/clients')
   }
+  addUsers(body:any){
+    return this._apiService.postWithToken('JobEstimator/add-client',body)
+  }
 }

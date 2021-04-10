@@ -5,6 +5,7 @@ h2{
 }
 td{
     font-weight: bold;
+    font-size: 0.9rem;
 }
 td span{
     color: teal;
@@ -14,7 +15,7 @@ th{
     font-size: 1.3rem;
     color: teal;
 } 
-button.add{
+a.add{
     background-color: teal;
     color: snow;
     font-weight: bold;
@@ -27,11 +28,11 @@ button.add{
     -o-transition: all ease 0.5s;
     border-color: transparent;
 }
-button.add:hover{
+a.add:hover{
     background-color: transparent;
     color: teal;
     border-color: teal;
 }
-button.add span{
+a.add span{
     margin-right: 0.5rem;
 }
