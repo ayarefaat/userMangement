@@ -29,8 +29,11 @@ form:FormGroup
     this._loginService.login(user).subscribe(res=>{
       console.log(res);
       let token = (res as ApiResponse).token;
-      let expires = (res as ApiResponse).expires;
-      let exp=  new Date(expires).getTime();
+      let expires:Date = (res as ApiResponse).expires;
+      let exp=  new Date(expires).getTime()-120*1000*60;
+      console.log(exp);
+      console.log(new Date(exp));
+      
       let now = new Date().getTime();
       let end = exp -now
       console.log(end);

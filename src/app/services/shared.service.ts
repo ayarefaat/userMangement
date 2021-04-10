@@ -25,7 +25,7 @@ tokenTimer;
     let expiresIn=localStorage.getItem("expiresIn");
     let DateNow=new Date().getTime();
     // let expiresDate=new Date(expiresIn).getTime();
-    let expiryDate=+expiresIn -DateNow
+    let expiryDate=+expiresIn-DateNow
     if(token && expiryDate > 0)
      { this.autoLogout(expiryDate)
        return true
